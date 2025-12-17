@@ -1,12 +1,12 @@
-const { rutaArchivoDinamic } = require("./config/config.js");
+const { rutaArchivoDinamic } = require("../config/config.js");
 const fs = require("fs");
 const { v4: uuidv4 } = require("uuid");
 
-const rutacart = rutaArchivoDinamic("carts.json");
+const rutacarts = rutaArchivoDinamic("carts.json");
 
 class CartManager {
     constructor() {
-        this.path = rutacart;
+        this.path = rutacarts;
         this.carts = [];
     }
 
@@ -39,11 +39,11 @@ class CartManager {
         return nuevoCarrito;
     }
 
-    // Obtener productos del carrito
+    // Obtener productos del carrito por id
     async getCartById(id) {
         await this.readFile();
-        const cart = this.carts.find(c => c.id === id);
-        return cart || null;
+        const carts = this.carts.find(c => c.id === id);
+        return carts || null;
     }
 
     // Agregar producto al carrito

@@ -1,0 +1,42 @@
+[
+  {
+    "id": "1",
+    "nombre": "Mochila Antirrobo",
+    "precio": 9999,
+    "description": "La Mochila Antirrobo es un modelo con apertura en la parte trasera que mantiene las pertenencias seguras.",
+    "stock": 50,
+    "status": false
+  },
+  {
+    "id": "2",
+    "nombre": "Matero Ecuador",
+    "precio": 60000,
+    "description": "Confeccionado en cordura cosida en efecto canelón, está envivado en sus bordes con pu a tono y forrado en silver (impermeable).",
+    "stock": 15,
+    "status": false
+  },
+  {
+    "id": "3",
+    "nombre": "Matero Armenia",
+    "precio": 500,
+    "description": "El matero Armenia es un bolso tipo puffer confeccionado en sire canelón y forrado en silver.",
+    "stock": 15,
+    "status": false
+  },
+  {
+    "id": "97b8baf6-f859-4cd6-a902-f636bbbdf558",
+    "nombre": "Cartera",
+    "precio": 51,
+    "description": "Nueva Cartera",
+    "stock": 5,
+    "status": true
+  },
+  {
+    "id": "46b60f84-6d51-4fff-9d19-f44f147aae84",
+    "nombre": "Cartera",
+    "precio": 51,
+    "description": "Nueva Cartera",
+    "stock": 5,
+    "status": true
+  }
+]
