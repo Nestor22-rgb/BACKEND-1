@@ -233,3 +233,42 @@ Proyecto desarrollado como parte del curso de Backend.
 
 
 ---
+
+#  Entrega N.º 2 – WebSockets + Handlebars
+
+##  Objetivo
+Implementar un sistema visual de productos utilizando *Handlebars* y *actualización en tiempo real* mediante *Socket.IO*.
+
+---
+
+##  Tecnologías utilizadas
+- Node.js
+- Express
+- Handlebars
+- Socket.IO
+- FileSystem (persistencia en JSON)
+
+---
+
+## Vistas
+### home.handlebars
+- Muestra la lista *estática* de productos.
+- Se actualiza al recargar la página.
+
+### realTimeProducts.handlebars
+- Muestra la lista *dinámica* de productos.
+- Se actualiza automáticamente sin recargar la página.
+
+---
+
+##  Funcionalidades en tiempo real
+-  Agregar productos mediante formulario (WebSocket).
+-  Eliminar productos en tiempo real (soft delete).
+-  Actualización automática en todos los clientes conectados.
+
+---
+
+##  Ejecución del proyecto
+```bash
+npm install
+npm run dev
