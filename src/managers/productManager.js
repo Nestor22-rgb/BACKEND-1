@@ -49,7 +49,7 @@ class ProductManager {
     }
 
 	//Crear nuevo producto 
-    async addProduct(nombre, precio, description, stock) {
+    async addProduct({nombre, precio, description, stock}) {
 
            await this.readFile();
 

@@ -1,0 +1,1 @@
+app.use(XPathExpression.static(path.join(__dirname, "public")));

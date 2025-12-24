@@ -1,24 +1,38 @@
 const express = require("express");
+const { engine } = require("express-handlebars");
+const path = require("path");
 const app = express();
 const ProductManager = require("./managers/productManager.js");
 const CartManager = require("./managers/cartManager.js");
 const { rutaArchivoDinamic } = require("./config/config.js");
+const viewsRouter = require ("./routes/views.router.js");
+
+
+// HANDLEBARS
+app.engine("handlebars", engine()); // -> Handlebars como motor
+app.set("view engine", "handlebars"); // -> Los archivos .handlebars son vistas
+app.set("views", path.join(__dirname, "views")); // -> Donde están las vistas (src/views)
 
 
 // Instanciar los Manegers
 const productManager = new ProductManager();
 const cartManager = new CartManager();
 
-// productManager.readfile();
+// RENDERIZAR VISTA
+app.get("/", async (req, res) => {
+    const products = await productManager.getProducts();
+    res.render("home", { products });
+});
 
 // MIDDEEWARES
-app.use(express.json())  //BODY -> JSON
-app.use(express.urlencoded( {extended: true }))  //FORMULARIO LEGA EN FORMATO JSON
-
+app.use(express.json());  //BODY -> JSON
+app.use(express.urlencoded( {extended: true }));  //FORMULARIO LEGA EN FORMATO JSON
+app.use("/", viewsRouter); // CONECTAR RUTAS
+app.use(express.static(path.join(__dirname,"public")))
 
 app.get("/", (req, res) => {
     res.send("Helo World")
-})
+});
 
 // RUTA DE PRODUCTOS  api/product/
 
